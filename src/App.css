@@ -70,8 +70,25 @@ h1 {
 }
 
 .todo-form {
-  margin-bottom: 32px;
+  padding-bottom: 15px;
+  
+ 
 }
+
+@media (max-width: 768px) {
+  .todo-form {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /* Centers children horizontally */
+    align-items: center;
+    /* Centers children vertically */
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 8px;
+  }
+}
+
 
 .todo-input {
   padding: 14px 32px 14px 16px;
@@ -84,7 +101,15 @@ h1 {
     /* Ensures it doesn't exceed its container */
   background: transparent;
   color: #fff;
+  margin-right: -2px;
 }
+
+    .todo-input
+     {
+      flex-grow: 1;
+  
+      /* Adjust the width to make it responsive */
+    }
 
 .todo-input::placeholder {
   color: #e2e2e2;
