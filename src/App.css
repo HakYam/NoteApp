@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  
+  background-image: linear-gradient(316deg, #a444e4 0%, #592ed1 74%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 90%;
+  max-width: 500px;
+  /* Maximum width to ensure content does not stretch too far on large screens */
+  min-height: 600px;
+  background: #111527;
+  text-align: center;
+  margin: 64px auto;
+  /* Adjusted for better spacing on smaller screens */
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+/* Media query for tablets */
+@media (min-width: 768px) {
+  .todo-app {
+    max-width: 600px;
+    /* Slightly larger max-width for tablets and above */
+    margin: 128px auto;
+    /* Larger margin for larger devices */
+  }
+}
+
+/* Media query for desktops and larger screens */
+@media (min-width: 1024px) {
+  .todo-app {
+    max-width: 800px;
+    /* Further increased max-width for desktops */
+    /* Adjust other properties as needed for larger screens */
+  }
+}
+
+h1 {
+  margin: 32px 0;
+  font-size: 24px;
+  background-image: linear-gradient(316deg, #11f8e5 0%, #bf1cc2 74%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* Fallback for browsers that do not support background-clip: text */
+  -webkit-text-fill-color: transparent;
+  /* For Webkit browsers */
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.todo-form {
+  margin-bottom: 32px;
+}
+
+.todo-input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #5d0cff;
+  outline: none;
+  width: calc(100% - 48px);
+    /* Adjust based on padding and border if needed */
+    max-width: 320px;
+    /* Ensures it doesn't exceed its container */
+  background: transparent;
+  color: #fff;
+}
+
+.todo-input::placeholder {
+  color: #e2e2e2;
+}
+
+.todo-button {
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(90deg,
+      rgba(93, 12, 255, 1) 0%,
+      rgba(155, 0, 250, 1) 100%);
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.todo-input.edit {
+  border: 2px solid #149fff;
+}
+
+.todo-button.edit {
+  background: linear-gradient(90deg,
+      rgba(20, 159, 255, 1) 0%,
+      rgba(17, 122, 255, 1) 100%);
+  padding: 16px 22px;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.todo-row {
+  display: flex;
+  justify-content: space-between;
+  /* Aligns children to the start and end of the container */
+  align-items: center;
+  /* Centers items vertically */
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(90deg, rgba(255, 118, 20, 1) 0%, rgba(255, 84, 17, 1) 100%);
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 100%;
+  word-wrap: break-word;
+  /* Ensures text within children wraps */
+}
+
+/* Adjust text elements within .todo-row if necessary */
+.todo-row div,
+.todo-row p {
+  max-width: 80%;
+  /* Ensure text does not stretch beyond the container */
+  word-wrap: break-word;
+  /* Break long words to prevent overflow */
+}
+
+.todo-text-content {
+  flex-grow: 1;
+  margin-right: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.todo-row:nth-child(4n + 1) {
+  background: linear-gradient(90deg,
+      rgba(93, 12, 255, 1) 0%,
+      rgba(155, 0, 250, 1) 100%);
+}
+
+.todo-row:nth-child(4n + 2) {
+  background: linear-gradient(90deg,
+      rgba(255, 12, 241, 1) 0%,
+      rgba(250, 0, 135, 1) 100%);
+}
+
+.todo-row:nth-child(4n + 3) {
+  background: linear-gradient(90deg,
+      rgba(20, 159, 255, 1) 0%,
+      rgba(17, 122, 255, 1) 100%);
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  /* Keeps icons vertically centered */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Additional styles for icons if needed */
+.delete-icon,
+.edit-icon {
+  margin-left: 8px;
+  /* Adds space between icons */
+}
